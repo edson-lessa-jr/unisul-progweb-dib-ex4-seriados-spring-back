@@ -5,10 +5,11 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "tb_seriado")
+@SequenceGenerator(name = "seq_seriado", sequenceName = "seriado_seq", initialValue = 1, allocationSize = 1)
 public class Seriado {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_seriado")
     private Long id;
     @Column(nullable = false)
     private String nome;

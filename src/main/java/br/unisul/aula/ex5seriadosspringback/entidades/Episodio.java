@@ -4,9 +4,10 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "tb_episodio")
+@SequenceGenerator(name = "seq_episodio", sequenceName = "episodio_seq", initialValue = 1, allocationSize = 1)
 public class Episodio {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_episodio")
     private Long id;
     @Column(nullable = false)
     private int numero;

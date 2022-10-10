@@ -4,10 +4,11 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "tb_temporada")
+@SequenceGenerator(name = "seq_temporada", sequenceName = "temporada_seq", initialValue = 1, allocationSize = 1)
 public class Temporada {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_temporada")
     private Long id;
     @Column(nullable = false)
     private int numero;
