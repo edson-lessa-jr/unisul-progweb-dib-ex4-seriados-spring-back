@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:6543/progwebdib
+    url: jdbc:postgresql://localhost:15432/sist_distribuidos_dib
     username: postgres
-    password: postgres
+    password: 1234
   jpa:
     database: postgresql
     hibernate:
@@ -12,4 +12,4 @@ spring:
       hibernate.dialect: org.hibernate.dialect.PostgreSQL10Dialect
 
 server:
-  port: ${PORTA}
+  port: 8081
